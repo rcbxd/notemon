@@ -1,6 +1,9 @@
 <template>
   <div>
-    <span class="md-title">Enter Your Credentials</span>
+    <span class="md-title">
+      Enter Your Credentials
+      <md-icon>fingerprint</md-icon>
+    </span>
     <br />
     <h3 class="md-error">{{err}}</h3>
     <div>
@@ -24,7 +27,7 @@
         <label for="secondPassword">Repeat Password</label>
         <md-input type="password" name="secondPassword" v-model="secondPassword" />
       </md-field>
-      <md-button type="submit" class="md-primary" v-on:click="login">Sign Up</md-button>
+      <md-button type="submit" class="md-primary" v-on:click="signup">Sign Up</md-button>
     </div>
   </div>
 </template>

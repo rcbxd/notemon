@@ -94,6 +94,7 @@ body {
 
 .md-app {
   height: 100vh;
+  user-select: none;
 }
 
 #nav {
