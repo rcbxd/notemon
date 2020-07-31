@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <h1 class="md-display-1" id="pageTitle">{{firstName}}'s Reminders:</h1>
+    <h1 class="md-display-1" id="pageTitle">{{ firstName }}'s Reminders:</h1>
     <div class="md-layout md-gutter">
       <div
         md-with-hover
@@ -42,11 +42,15 @@
             <md-ripple>
               <md-card-header>
                 <md-card-header-text>
-                  <div class="md-title">{{r.title}}</div>
+                  <div class="md-title">{{ r.title }}</div>
                   <div class="md-subhead">Monday at 8:00 A.M.</div>
                 </md-card-header-text>
               </md-card-header>
-              <md-card-content>{{r.text.substring(0,50) + '...'}}</md-card-content>
+              <md-card-content>
+                {{
+                r.text.substring(0, 50) + "..."
+                }}
+              </md-card-content>
             </md-ripple>
           </div>
         </md-card>
@@ -59,7 +63,7 @@
     </md-speed-dial>
     <div>
       <md-dialog :md-active.sync="showEditDialog">
-        <md-dialog-title>{{currentNote.title}}</md-dialog-title>
+        <md-dialog-title>{{ currentNote.title }}</md-dialog-title>
         <md-dialog-content>
           <md-field class="md-counter md-clearable md-inline">
             <label>Your Note</label>
@@ -88,7 +92,7 @@
     </div>
     <div>
       <md-dialog :md-active.sync="showAddDialog">
-        <md-dialog-title>{{currentNote.title}}</md-dialog-title>
+        <md-dialog-title>{{ currentNote.title }}</md-dialog-title>
         <md-dialog-content>
           <md-field class="md-counter md-clearable md-inline">
             <label>Your Note</label>
@@ -248,6 +252,7 @@ export default {
         })
         .then(doc => {
           this.reminders[this.reminders.length - 1].docId = doc.id;
+          this.closeNewModal();
         });
     }
   },
